@@ -1,0 +1,10 @@
+Package: MAtools
+Type: Package
+Title: Tools by Matt Arnold
+Version: 0.1
+Date: 2018-07-12
+Author: Matt Arnold
+Maintainer: <arnhew99.github@outlook.com>
+Description: some useful stuff
+License: GPL-3
+Suggests: readstata13
