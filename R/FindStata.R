@@ -1,5 +1,5 @@
 FindStata <-
-function (folder = ".", verbose = TRUE, upcase.names = FALSE) 
+function (folder = ".", verbose = TRUE, upcase.names = FALSE, envir=.GlobalEnv) 
 {
 	require(readstata13)
     curwd <- getwd()
@@ -13,10 +13,10 @@ function (folder = ".", verbose = TRUE, upcase.names = FALSE)
             }
             dtaname <- substr(i, 1, nchar(i) - 4)
             object.names <- c(object.names, dtaname)
-            assign(dtaname, read.dta13(i), envir = .GlobalEnv)
+            assign(dtaname, read.dta13(i), envir = envir)
             if (upcase.names) {
                 eval(parse(text = paste0("names(", dtaname, ") <- toupper(names(", 
-                  dtaname, "))")), envir = .GlobalEnv)
+                  dtaname, "))")), envir = envir)
             }
         }
     }
